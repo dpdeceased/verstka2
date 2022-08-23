@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auxpo</title>
     <link rel="stylesheet" href="/styles/normalize.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
@@ -55,7 +59,52 @@
           </ul>
         </nav>
       </header>
-      <main class="content-main"></main>
+      <main class="content-main">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              Slide 1
+              <div class="swiper-footer">text</div>
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </main>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      var count = ["1", "2", "3"];
+      var art = ["Julius Caesar", "Into the Abyss", "Discobolous"];
+      var price = ["221", "157", "95"];
+      var swiper = new Swiper(".mySwiper", {
+        direction: "vertical",
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return (
+              '<p class="' +
+              className +
+              '">' +
+              ("#0" + count[index]) +
+              "<span>" +
+              art[index] +
+              "</span>" +
+              "<span>" +
+              (price[index] + " ETH") +
+              "</span>" +
+              "</p>"
+            );
+          },
+        },
+      });
+    </script>
   </body>
 </html>

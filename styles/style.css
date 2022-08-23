@@ -12,7 +12,6 @@ html {
   grid-template-columns: 110px 1fr;
   grid-template-rows: 98px 1fr;
   height: 100%;
-  gap: 60px;
 }
 .content-sidebar {
   border-right: 1px solid #505050;
@@ -75,6 +74,7 @@ html {
   justify-content: space-between;
   align-items: center;
   padding-right: 70px;
+  padding-left: 60px;
 }
 .content-header_list {
   list-style: none;
@@ -132,4 +132,43 @@ html {
 .content-main {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+}
+.content-main {
+  color: #fff;
+}
+.swiper {
+  height: calc(100vh - 98px);
+  position: relative;
+}
+.swiper-wrapper {
+  flex-basis: 500px;
+  position: static;
+}
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  right: inherit;
+  left: 60px;
+  position: absolute;
+  width: 203px;
+  flex-basis: 203px;
+}
+.swiper-pagination-bullet-active {
+  background: transparent;
+}
+.swiper-pagination-bullet {
+  background: transparent;
+  height: inherit;
+  width: inherit;
+  text-align: left;
+}
+.swiper-pagination-bullet span {
+  display: block;
+}
+.swiper-footer {
+  background-color: red;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
